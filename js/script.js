@@ -16,18 +16,19 @@ const jump = () => {
 const loop = setInterval(() => {
 
     const pipePosition = pipe.offsetLeft;
-    const marioPosition = +window.getComputedStyle(mario).bottom.replace('px', '')
-    if (pipePosition <= 120 && pipePosition > 0 && marioPosition < 56 ) {
+    const marioPosition = +window.getComputedStyle(mario).bottom.replace('px', '');
+    const marioBottom = +window.getComputedStyle(mario).left.replace('px', '');
+    if (pipePosition <= 162 && pipePosition < 32 && marioPosition < 41 ) {
 
         pipe.style.animation = 'none'
-        pipe.style.left = `${pipePosition}px`
+        pipe.style.left = `${marioBottom}px`
 
-        mario.style.animation = '    '
-        mario.style.left = `${marioPosition}px`
+        mario.style.animation = 'none'
+        mario.style.bottom = `${marioPosition}px`
 
         mario.src = 'images/batman-game-over.gif';
-        mario.style.width = '7rem'
-        mario.style.marginLeft = '50px'
+        mario.style.width = '5rem'
+        mario.style.marginLeft = '-50px'
         mario.style.marginBottom = '-1px'
 
 
@@ -51,6 +52,6 @@ const scoring = setInterval(() => {
         body.style.background = 'gray'
     }
 
-},1500);
+},3000);
 document.addEventListener('keydown', jump);
 document.addEventListener('click', jump);
