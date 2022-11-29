@@ -11,7 +11,7 @@ const jump = () => {
 
     setTimeout(() => {
         mario.classList.remove('jump')
-    }, 500)
+    },600)
 }
 const loop = setInterval(() => {
 
@@ -52,6 +52,6 @@ const scoring = setInterval(() => {
         body.style.background = 'gray'
     }
 
-},3000);
+},1500);
 document.addEventListener('keydown', jump);
 document.addEventListener('click', jump);
