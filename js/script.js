@@ -11,24 +11,27 @@ const jump = () => {
 
     setTimeout(() => {
         mario.classList.remove('jump')
-    },600)
+    },500)
 }
 const loop = setInterval(() => {
 
     const pipePosition = pipe.offsetLeft;
     const marioPosition = +window.getComputedStyle(mario).bottom.replace('px', '');
-    const marioBottom = +window.getComputedStyle(mario).left.replace('px', '');
-    if (pipePosition <= 162 && pipePosition < 32 && marioPosition < 41 ) {
+
+    const onHit = pipePosition < 0 && marioPosition < 40;
+    const onHitAIR = pipePosition <= 112 && marioPosition < 40;
+
+    if (onHit || onHitAIR) {
 
         pipe.style.animation = 'none'
-        pipe.style.left = `${marioBottom}px`
+        pipe.style.left = `${pipePosition}px`
 
         mario.style.animation = 'none'
         mario.style.bottom = `${marioPosition}px`
 
         mario.src = 'images/batman-game-over.gif';
-        mario.style.width = '5rem'
-        mario.style.marginLeft = '-50px'
+        mario.style.width = '90px'
+        mario.style.marginLeft = '50px'
         mario.style.marginBottom = '-1px'
 
 

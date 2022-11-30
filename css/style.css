@@ -14,19 +14,17 @@
 }
 .pipe {
     position: absolute;
-    width: 2.4rem;
+    width: 40px;
     bottom: 0;
     animation: pipe-animation 1.5s infinite linear;
-
 }
 .mario {
-    width: 7rem;
+    width: 120px;
     position: absolute;
-    left: 50px;
     bottom: 0;
 }
 .jump {
-    animation: jump 1000ms ease-out;
+    animation: jump 800ms ease-out;
 }
 .clouds {
     position: absolute;
