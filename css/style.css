@@ -90,3 +90,7 @@ body {
     position: absolute;
     text-align: center;
 }
+h1, h2 {
+    color: white;
+    font-size: 1rem;
+}
