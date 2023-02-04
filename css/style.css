@@ -1,0 +1,108 @@
+* {
+    margin: 0 auto;
+    padding: 0;
+    box-sizing: border-box;
+}
+.botao-atualizar {
+    position: absolute;
+    left: 50%;
+    margin-left: -100px;
+    margin-top: 100px;
+    padding: 40px;
+    border-radius: 50px;
+    color: #fff;
+    background-color: red;
+    border:none;
+    cursor: pointer;
+}
+.game-board {
+    width: 100%;
+    height: 550px;
+    border-bottom: 20px solid rgb(49, 49, 49);
+    margin: 0 auto;
+    position: relative;
+    overflow: hidden;
+    /* background-image: url('../images/fundo.png'); */
+}
+.pipe {
+    position: absolute;
+    width: 40px;
+    bottom: 0;
+    animation: pipe-animation 2.5s infinite linear;
+}
+.mario {
+    width: 120px;
+    position: absolute;
+    bottom: 0;
+}
+.jump {
+    animation: jump 1s ease-out;
+}
+.clouds {
+    position: absolute;
+    width: 550px;
+    animation: clouds-animation 20s infinite linear;
+    bottom: 300px;
+}
+section {
+    background-color: rgb(82, 50, 28);
+    height: max-content;
+    color: white;
+    font-size: 1rem;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-align: center;
+    font-weight: 500;
+}
+.score p {
+    font-size: 3.5rem;
+}
+
+body {
+    background-color: dimgray; 
+}
+@keyframes pipe-animation {
+    from {
+        right: -150%;
+    }
+    to {
+        right: 100%;
+    }
+}
+@keyframes jump {
+    0% {
+        bottom: 0;
+    }
+    40% {
+        bottom: 140px;
+    }
+    50% {
+        bottom: 140px;
+    }
+    60% {
+        bottom: 140px;
+    }
+    100% {
+        bottom: 0;
+    }
+}
+@keyframes clouds-animation {
+    from {
+        right: -550px;
+    }
+    to {
+        right: 100%;
+    }
+} 
+.score{
+    z-index: 9999;
+    color: white;
+    font-size: 1rem;
+    bottom: 150px;
+    right: 0;
+    position: absolute;
+    text-align: center;
+}
+h1, h2 {
+    color: white;
+    font-size: 1rem;
+}
